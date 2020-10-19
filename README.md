@@ -38,7 +38,7 @@ $ make dist
 When you’ve tested the plugin and confirmed it’s working, Use the following curl command to create post on behalf of any user.
 
 ```bash
-curl --location --request POST 'http://<your-mattermost-url>/plugins/mattermost-plugin-mimic-user/api/v1/create-post' \
+curl --location --request POST 'http://<Your-Mattermost-URL>/plugins/mattermost-plugin-mimic-user/api/v1/create-post' \
 --header 'X-CSRF-Token: <X-CSRF-TOKEN>' \
 --header 'X-Requested-With: XMLHttpRequest' \
 --header 'Content-Type: application/json' \
@@ -50,7 +50,7 @@ curl --location --request POST 'http://<your-mattermost-url>/plugins/mattermost-
  }'
 ```
 
-1. Replace <your-mattermost-url> with your Mattermost URL.
+1. Replace <Your-Mattermost-URL> with your Mattermost URL.
 2. For <X-CSRF_TOKEN> and <Cookie> go to your browser and open mattermost, then open your browser developer console and go to the Network tab.
 3. Now create a post in any channel, group or dm, In the networks tab, there with be a new XHR call with a name `posts`, click on it and go to headers.
 4. In headers there will be request headers, and under request headers you will see X-CSRF-TOKEN and Cookie, copy both of them.
