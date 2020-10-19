@@ -1,34 +1,32 @@
 package config
 
 import (
-	"github.com/mattermost/mattermost-server/plugin"
+	"github.com/mattermost/mattermost-server/v5/plugin"
 	"go.uber.org/atomic"
 )
 
 const (
-	CommandPrefix = PluginName
-
 	URLPluginBase = "/plugins/" + PluginName
 	URLStaticBase = URLPluginBase + "/static"
 
 	HeaderMattermostUserID = "Mattermost-User-Id"
-
-	BotUserName    = ""
-	BotDisplayName = ""
-	BotDescription = ""
+	PluginAPIBaseURL       = URLPluginBase + "/api/v1"
 )
 
 var (
 	config     atomic.Value
 	Mattermost plugin.API
-	BotUserID  string
 )
 
 type Configuration struct {
 }
 
 func GetConfig() *Configuration {
-	return config.Load().(*Configuration)
+	conf := config.Load()
+	if conf == nil {
+		return nil
+	}
+	return conf.(*Configuration)
 }
 
 func SetConfig(c *Configuration) {

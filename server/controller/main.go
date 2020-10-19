@@ -6,10 +6,10 @@ import (
 	"net/url"
 	"path/filepath"
 
-	"github.com/Brightscout/mattermost-plugin-boilerplate/server/config"
-	"github.com/Brightscout/mattermost-plugin-boilerplate/server/util"
+	"github.com/Brightscout/mattermost-plugin-mimic-user/server/config"
+	"github.com/Brightscout/mattermost-plugin-mimic-user/server/util"
 	"github.com/gorilla/mux"
-	"github.com/mattermost/mattermost-server/model"
+	"github.com/mattermost/mattermost-server/v5/model"
 	"github.com/pkg/errors"
 )
 
@@ -22,7 +22,9 @@ type Endpoint struct {
 
 // Endpoints is a map of endpoint key to endpoint object
 // Usage: getEndpointKey(GetMetadata): GetMetadata
-var Endpoints = map[string]*Endpoint{}
+var Endpoints = map[string]*Endpoint{
+	getEndpointKey(mimicUser): mimicUser,
+}
 
 // Uniquely identifies an endpoint using path and method
 func getEndpointKey(endpoint *Endpoint) string {

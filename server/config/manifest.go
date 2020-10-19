@@ -3,5 +3,5 @@
 package config
 
 const (
-	PluginName = "boilerplate"
+	PluginName = "mattermost-plugin-mimic-user"
 )

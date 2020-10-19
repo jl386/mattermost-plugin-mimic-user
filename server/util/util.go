@@ -4,10 +4,7 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/mattermost/mattermost-server/model"
 	"github.com/pkg/errors"
-
-	"github.com/Brightscout/mattermost-plugin-boilerplate/server/config"
 )
 
 // Min - since math.Min is for floats and casting to and from floats is dangerous.
@@ -58,11 +55,3 @@ func SplitArgs(s string) ([]string, error) {
 	return cleanedArgs[0:count], nil
 }
 
-// SendEphemeralCommandResponse can be used to return an ephemeral message as the response for a slash command
-func SendEphemeralCommandResponse(message string) (*model.CommandResponse, *model.AppError) {
-	return &model.CommandResponse{
-		Username: config.BotDisplayName,
-		Type:     model.COMMAND_RESPONSE_TYPE_EPHEMERAL,
-		Text:     message,
-	}, nil
-}
