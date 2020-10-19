@@ -1,6 +1,8 @@
-# mattermost-plugin-mimic-user
+# [DEMO] mattermost-plugin-mimic-user
 
-A demo mattermost plugin to creating post on behalf of any mattermost user.
+A demo mattermost plugin to allow creating mattermost post mimicing any user.
+
+Note: only for demo purposes. Not intended for use in production.
 
 ## Installation and setup
 
