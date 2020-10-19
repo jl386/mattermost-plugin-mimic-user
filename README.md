@@ -52,11 +52,11 @@ curl --location --request POST 'http://<Your-Mattermost-URL>/plugins/mattermost-
  }'
 ```
 
-1. Replace <Your-Mattermost-URL> with your Mattermost URL.
-2. For <X-CSRF_TOKEN> and <Cookie> go to your browser and open mattermost, then open your browser developer console and go to the Network tab.
+1. Replace `<Your-Mattermost-URL>` with your Mattermost URL.
+2. For `<X-CSRF_TOKEN>` and `<Cookie>` go to your browser and open mattermost, then open your browser developer console and go to the Network tab.
 3. Now create a post in any channel, group or dm, In the networks tab, there with be a new XHR call with a name `posts`, click on it and go to headers.
 4. In headers there will be request headers, and under request headers you will see X-CSRF-TOKEN and Cookie, copy both of them.
-4. Now replace <X-CSRF-TOKEN> and <Cookie> in curl command with the copied value in previous step.
-5. Replace <your-message> with the message you want to post.
-6. Replace <channel-id> with the channel id in which you want to create the post.
-7. Replace <user id> with the user id you want to create the post. 
+4. Now replace `<X-CSRF-TOKEN>` and `<Cookie>` in curl command with the copied value in previous step.
+5. Replace `<your-message>` with the message you want to post.
+6. Replace `<channel-id>` with the channel id in which you want to create the post.
+7. Replace `<user id>` with the user id you want to create the post. 
