@@ -20,10 +20,10 @@ A mattermost plugin to creating post on behalf of any mattermost user.
 - Run the following commands to prepare a compiled, distributable plugin zip:
 
 ```bash
-$ mkdir -p ${GOPATH}/src/github.com/rifflearning
-$ cd ${GOPATH}/src/github.com/rifflearning
-$ git clone git@github.com:rifflearning/mattermost-plugin-riff-survey.git
-$ cd mattermost-plugin-riff-survey
+$ mkdir -p ${GOPATH}/src/github.com/Brightscout
+$ cd ${GOPATH}/src/github.com/Brightscout
+$ git clone git@github.com:Brightscout/mattermost-plugin-mimic-user.git
+$ cd mattermost-plugin-mimic-user
 $ make dist
 ```
 
