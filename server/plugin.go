@@ -3,8 +3,6 @@ package main
 import (
 	"net/http"
 
-	_ "github.com/denisenkom/go-mssqldb"
-	"github.com/mattermost/mattermost-plugin-api/cluster"
 	"github.com/mattermost/mattermost-server/v5/plugin"
 
 	"github.com/Brightscout/mattermost-plugin-mimic-user/server/config"
@@ -13,8 +11,6 @@ import (
 
 type Plugin struct {
 	plugin.MattermostPlugin
-
-	backgroundJob *cluster.Job
 }
 
 func (p *Plugin) OnActivate() error {

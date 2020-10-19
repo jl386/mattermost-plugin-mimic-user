@@ -86,13 +86,6 @@ func returnStatusOK(w http.ResponseWriter) {
 	_, _ = w.Write([]byte(model.MapToJson(m)))
 }
 
-func returnPostActionIntegrationResponse(w http.ResponseWriter, res *model.PostActionIntegrationResponse) {
-	w.Header().Set("Content-Type", "application/json")
-	if _, err := w.Write(res.ToJson()); err != nil {
-		config.Mattermost.LogWarn("failed to write PostActionIntegrationResponse", "Error", err.Error())
-	}
-}
-
 func verifyHTTPSecret(expected, got string) (status int, err error) {
 	for {
 		if subtle.ConstantTimeCompare([]byte(got), []byte(expected)) == 1 {
