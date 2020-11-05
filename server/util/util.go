@@ -54,4 +54,3 @@ func SplitArgs(s string) ([]string, error) {
 
 	return cleanedArgs[0:count], nil
 }
-

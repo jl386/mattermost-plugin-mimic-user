@@ -1,6 +1,6 @@
 {
     "id": "mattermost-plugin-mimic-user",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "name": "Mattermost plugin mimic user",
     "description": "",
     "min_server_version": "5.12.0",

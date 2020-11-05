@@ -5,8 +5,8 @@ import (
 
 	"github.com/mattermost/mattermost-server/v5/plugin"
 
-	"github.com/Brightscout/mattermost-plugin-mimic-user/server/config"
-	"github.com/Brightscout/mattermost-plugin-mimic-user/server/controller"
+	"github.com/jl386/mattermost-plugin-mimic-user/server/config"
+	"github.com/jl386/mattermost-plugin-mimic-user/server/controller"
 )
 
 type Plugin struct {

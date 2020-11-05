@@ -6,9 +6,9 @@ import (
 	"net/url"
 	"path/filepath"
 
-	"github.com/Brightscout/mattermost-plugin-mimic-user/server/config"
-	"github.com/Brightscout/mattermost-plugin-mimic-user/server/util"
 	"github.com/gorilla/mux"
+	"github.com/jl386/mattermost-plugin-mimic-user/server/config"
+	"github.com/jl386/mattermost-plugin-mimic-user/server/util"
 	"github.com/mattermost/mattermost-server/v5/model"
 	"github.com/pkg/errors"
 )
@@ -75,7 +75,15 @@ func Authenticated(w http.ResponseWriter, r *http.Request) bool {
 		http.Error(w, "Unauthorized", http.StatusUnauthorized)
 		return false
 	}
-
+	user, err := config.Mattermost.GetUser(userID)
+	if err != nil {
+		http.Error(w, "Failed", http.StatusBadRequest)
+		return false
+	}
+	if !user.IsInRole(model.SYSTEM_ADMIN_ROLE_ID) {
+		http.Error(w, "Unauthorized - You must be a SysAdmin to use this command", http.StatusUnauthorized)
+		return false
+	}
 	return true
 }
 
