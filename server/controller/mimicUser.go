@@ -18,7 +18,7 @@ var mimicUser = &Endpoint{
 
 func handleMimicUser(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json; charset=UTF-8")
-	boaUsername := r.Header.Get("X-BOA-HEADER")
+	boaUsername := r.Header.Get("X-BOA-User-Id")
 	config.Mattermost.LogInfo(boaUsername)
 	user, err := config.Mattermost.GetUserByUsername(boaUsername)
 	if err != nil {

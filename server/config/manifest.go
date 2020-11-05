@@ -3,5 +3,5 @@
 package config
 
 const (
-	PluginName = "mattermost-plugin-mimic-user"
+	PluginName = "mulesoft"
 )
